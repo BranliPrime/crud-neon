@@ -1,0 +1,44 @@
+# Archivos de entorno (credenciales, API keys, etc.)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Dependencias de Node.js (se regeneran con npm install)
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Archivos de logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Caché y archivos temporales
+dist/
+build/
+.cache/
+temp/
+out/
+
+# Configuración del editor (VSCode, JetBrains, etc.)
+.vscode/
+.idea/
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar la base de datos local en caso de usar SQLite o PostgreSQL
+server/database.sqlite
+server/database.sqlite3
+server/pgdata/
+
+# Docker (si usas Docker)
+docker-compose.override.yml
+.dockerignore
