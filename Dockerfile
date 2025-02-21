@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 3000
 
 
-CMD ["node", "index"]
+CMD ["node", "app"]
