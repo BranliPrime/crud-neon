@@ -7,7 +7,7 @@ on:
 
 jobs:
   decir-hola:
-    runs_on: ubuntu-latest
+    runs_on: ubuntu:latest
 
     steps:
      - name: mostrar mensaje
