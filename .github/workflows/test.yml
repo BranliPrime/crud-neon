@@ -14,7 +14,7 @@ jobs:
     environment: produccion  
 
     steps:
-      - name: mostrar mensaje
+      - name: Mostrar mensaje
         run: echo "Hola Mundo"
       
       - name: Enviar Petición
@@ -26,8 +26,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Logout previo de GHCR (Opcional)
+        run: docker logout ghcr.io || true
+
       - name: Logearnos en GHCR
-        run: echo ${{ secrets.TOKEN1 }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+        run: echo "${{ secrets.TOKEN1 }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
       - name: Crear imagen 
         run: docker build . -t ghcr.io/BranliPrime/express-image:latest
