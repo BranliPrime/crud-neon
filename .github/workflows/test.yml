@@ -30,7 +30,7 @@ jobs:
         run: docker logout ghcr.io || true
 
       - name: Logearnos en GHCR
-        run: echo "${{ secrets.TOKEN1 }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+        run: docker login ghcr.io -u "${{ github.actor }}" -p "${{ secrets.TOKEN1 }}"
 
       - name: Crear imagen 
         run: docker build . -t ghcr.io/BranliPrime/express-image:latest
